@@ -4,6 +4,8 @@
  */
 package Presentacion;
 
+import java.awt.Color;
+
 /**
  *
  * @author Juan Luis Diaz Aylas
@@ -13,8 +15,11 @@ public class FrmLogin extends javax.swing.JFrame {
     /**
      * Creates new form FrmLogin
      */
+    int xMouse, yMouse;
+
     public FrmLogin() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -26,21 +31,204 @@ public class FrmLogin extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        bg = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        lblclave = new javax.swing.JLabel();
+        lblnombreempresa = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        lblusuario = new javax.swing.JLabel();
+        txtusuario = new javax.swing.JTextField();
+        jSeparator1 = new javax.swing.JSeparator();
+        jSeparator2 = new javax.swing.JSeparator();
+        txtclave = new javax.swing.JPasswordField();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        jpExitButon = new javax.swing.JPanel();
+        lblExitButton = new javax.swing.JLabel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
+        setResizable(false);
+
+        bg.setBackground(new java.awt.Color(255, 255, 255));
+        bg.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setBackground(new java.awt.Color(204, 255, 51));
+        bg.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 20, 200, 410));
+
+        lblclave.setFont(new java.awt.Font("Roboto Black", 1, 18)); // NOI18N
+        lblclave.setText("CONTRASEÑA");
+        bg.add(lblclave, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 260, -1, -1));
+
+        lblnombreempresa.setFont(new java.awt.Font("Roboto Black", 1, 18)); // NOI18N
+        lblnombreempresa.setText("NOMBRE DE EMPRESA");
+        bg.add(lblnombreempresa, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 200, -1, -1));
+
+        jLabel4.setFont(new java.awt.Font("Roboto Black", 1, 18)); // NOI18N
+        jLabel4.setText("INICIO DE SESION");
+        bg.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 90, -1, -1));
+
+        lblusuario.setFont(new java.awt.Font("Roboto Black", 1, 18)); // NOI18N
+        lblusuario.setText("USUARIO");
+        bg.add(lblusuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, -1, -1));
+
+        txtusuario.setFont(new java.awt.Font("Roboto Black", 0, 14)); // NOI18N
+        txtusuario.setForeground(new java.awt.Color(204, 204, 204));
+        txtusuario.setText("Ingrese su nombre de usuario");
+        txtusuario.setBorder(null);
+        txtusuario.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                txtusuarioMousePressed(evt);
+            }
+        });
+        bg.add(txtusuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 180, 270, -1));
+        bg.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 200, 270, 20));
+        bg.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 320, 270, 20));
+
+        txtclave.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        txtclave.setForeground(new java.awt.Color(204, 204, 204));
+        txtclave.setText("********");
+        txtclave.setBorder(null);
+        txtclave.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                txtclaveMousePressed(evt);
+            }
+        });
+        bg.add(txtclave, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 300, 270, -1));
+
+        jPanel1.setBackground(new java.awt.Color(102, 153, 255));
+
+        jLabel2.setFont(new java.awt.Font("Roboto Black", 0, 14)); // NOI18N
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("INGRESAR");
+        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel2MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
+        );
+
+        bg.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 350, 140, 30));
+
+        jpExitButon.setBackground(new java.awt.Color(255, 255, 255));
+
+        lblExitButton.setFont(new java.awt.Font("Roboto Black", 0, 18)); // NOI18N
+        lblExitButton.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblExitButton.setText("X");
+        lblExitButton.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                lblExitButtonMouseDragged(evt);
+            }
+        });
+        lblExitButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblExitButtonMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                lblExitButtonMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                lblExitButtonMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                lblExitButtonMousePressed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jpExitButonLayout = new javax.swing.GroupLayout(jpExitButon);
+        jpExitButon.setLayout(jpExitButonLayout);
+        jpExitButonLayout.setHorizontalGroup(
+            jpExitButonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(lblExitButton, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
+        );
+        jpExitButonLayout.setVerticalGroup(
+            jpExitButonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(lblExitButton, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
+        );
+
+        bg.add(jpExitButon, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 30, 30));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(bg, javax.swing.GroupLayout.PREFERRED_SIZE, 733, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(bg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void lblExitButtonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblExitButtonMousePressed
+        // TODO add your handling code here:
+        xMouse = evt.getX();
+        yMouse = evt.getY();
+    }//GEN-LAST:event_lblExitButtonMousePressed
+
+    private void lblExitButtonMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblExitButtonMouseDragged
+        // TODO add your handling code here:
+        int x = evt.getXOnScreen();
+        int y = evt.getYOnScreen();
+        this.setLocation(x - xMouse, y - yMouse);
+    }//GEN-LAST:event_lblExitButtonMouseDragged
+
+    private void lblExitButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblExitButtonMouseClicked
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_lblExitButtonMouseClicked
+
+    private void lblExitButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblExitButtonMouseEntered
+        // TODO add your handling code here:
+        jpExitButon.setBackground(Color.red);
+        lblExitButton.setForeground(Color.white);
+    }//GEN-LAST:event_lblExitButtonMouseEntered
+
+    private void lblExitButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblExitButtonMouseExited
+        // TODO add your handling code here:
+        jpExitButon.setBackground(Color.white);
+        lblExitButton.setForeground(Color.black);
+    }//GEN-LAST:event_lblExitButtonMouseExited
+
+    private void txtusuarioMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtusuarioMousePressed
+        // TODO add your handling code here:
+        if (txtusuario.getText().equals("Ingrese su nombre de usuario")) {
+            txtusuario.setText("");
+            txtusuario.setForeground(Color.black);
+        }
+        if (String.valueOf(txtclave.getPassword()).isEmpty()) {
+            txtclave.setText("********");
+            txtclave.setForeground(Color.gray);
+        }
+    }//GEN-LAST:event_txtusuarioMousePressed
+
+    private void txtclaveMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtclaveMousePressed
+        // TODO add your handling code here:
+        if (String.valueOf(txtclave.getPassword()).equals("********")) {
+            txtclave.setText("");
+            txtclave.setForeground(Color.black);
+        }
+        if (txtusuario.getText().isEmpty()) {
+            txtusuario.setText("Ingrese su nombre de usuario");
+            txtusuario.setForeground(Color.gray);
+        }
+    }//GEN-LAST:event_txtclaveMousePressed
+
+    private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel2MouseClicked
 
     /**
      * @param args the command line arguments
@@ -78,5 +266,19 @@ public class FrmLogin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel bg;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JPanel jpExitButon;
+    private javax.swing.JLabel lblExitButton;
+    private javax.swing.JLabel lblclave;
+    private javax.swing.JLabel lblnombreempresa;
+    private javax.swing.JLabel lblusuario;
+    private javax.swing.JPasswordField txtclave;
+    private javax.swing.JTextField txtusuario;
     // End of variables declaration//GEN-END:variables
 }

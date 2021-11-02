@@ -1,6 +1,6 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/MDIApplication.java to edit this template
  */
 package Presentacion;
 
@@ -15,6 +15,9 @@ public class FrmPrincipal extends javax.swing.JFrame {
      */
     public FrmPrincipal() {
         initComponents();
+        setLocationRelativeTo(null);
+        this.setExtendedState(MAXIMIZED_BOTH);
+        this.setTitle("Sistema de Pesaje de Algodon - PESFARD");
     }
 
     /**
@@ -26,21 +29,298 @@ public class FrmPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        escritorio = new javax.swing.JDesktopPane();
+        menuBar = new javax.swing.JMenuBar();
+        fileMenu = new javax.swing.JMenu();
+        jMenuSistema = new javax.swing.JMenu();
+        menuItemBaseDatos = new javax.swing.JMenuItem();
+        menuItemPuertoSerie = new javax.swing.JMenuItem();
+        menuItemCamaraVigilancia = new javax.swing.JMenuItem();
+        jMenuRegistrar = new javax.swing.JMenu();
+        menuItemAgricultor = new javax.swing.JMenuItem();
+        menuItemAcopiador = new javax.swing.JMenuItem();
+        menuItemConductor = new javax.swing.JMenuItem();
+        menuItemLote = new javax.swing.JMenuItem();
+        menuItemUsuario = new javax.swing.JMenuItem();
+        menuItemProductosAlgodon = new javax.swing.JMenuItem();
+        jMenuModificar = new javax.swing.JMenu();
+        editMenu = new javax.swing.JMenu();
+        cutMenuItem = new javax.swing.JMenuItem();
+        copyMenuItem = new javax.swing.JMenuItem();
+        pasteMenuItem = new javax.swing.JMenuItem();
+        deleteMenuItem = new javax.swing.JMenuItem();
+        helpMenu = new javax.swing.JMenu();
+        contentMenuItem = new javax.swing.JMenuItem();
+        aboutMenuItem = new javax.swing.JMenuItem();
+        jMenu6 = new javax.swing.JMenu();
+        jMenu7 = new javax.swing.JMenu();
+        jMenu8 = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
+        jMenuItem7 = new javax.swing.JMenuItem();
+        jMenu1 = new javax.swing.JMenu();
+        jMenuItem2 = new javax.swing.JMenuItem();
+        jMenuItem3 = new javax.swing.JMenuItem();
+        jMenu2 = new javax.swing.JMenu();
+        jMenuItem4 = new javax.swing.JMenuItem();
+        jMenuItem5 = new javax.swing.JMenuItem();
+        jMenuItem6 = new javax.swing.JMenuItem();
+        jMenu3 = new javax.swing.JMenu();
+        jMenu4 = new javax.swing.JMenu();
+        jMenu5 = new javax.swing.JMenu();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        fileMenu.setMnemonic('f');
+        fileMenu.setText("Mantenimiento");
+
+        jMenuSistema.setText("Sistema");
+
+        menuItemBaseDatos.setMnemonic('o');
+        menuItemBaseDatos.setText("Configurar Base de Datos");
+        menuItemBaseDatos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuItemBaseDatosActionPerformed(evt);
+            }
+        });
+        jMenuSistema.add(menuItemBaseDatos);
+
+        menuItemPuertoSerie.setMnemonic('a');
+        menuItemPuertoSerie.setText("Configurar Puerto Serie");
+        menuItemPuertoSerie.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuItemPuertoSerieActionPerformed(evt);
+            }
+        });
+        jMenuSistema.add(menuItemPuertoSerie);
+
+        menuItemCamaraVigilancia.setMnemonic('s');
+        menuItemCamaraVigilancia.setText("Configurar Camara de Vigilancia");
+        menuItemCamaraVigilancia.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuItemCamaraVigilanciaActionPerformed(evt);
+            }
+        });
+        jMenuSistema.add(menuItemCamaraVigilancia);
+
+        fileMenu.add(jMenuSistema);
+
+        jMenuRegistrar.setText("Registrar");
+
+        menuItemAgricultor.setText("Registrar Agricultor");
+        jMenuRegistrar.add(menuItemAgricultor);
+
+        menuItemAcopiador.setText("Registrar Acopiador");
+        jMenuRegistrar.add(menuItemAcopiador);
+
+        menuItemConductor.setText("Registrar Placa - Conductor");
+        menuItemConductor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuItemConductorActionPerformed(evt);
+            }
+        });
+        jMenuRegistrar.add(menuItemConductor);
+
+        menuItemLote.setText("Registrar Lote");
+        jMenuRegistrar.add(menuItemLote);
+
+        menuItemUsuario.setText("Registrar Usuario");
+        menuItemUsuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuItemUsuarioActionPerformed(evt);
+            }
+        });
+        jMenuRegistrar.add(menuItemUsuario);
+
+        menuItemProductosAlgodon.setText("Registrar Productos de Algodon");
+        jMenuRegistrar.add(menuItemProductosAlgodon);
+
+        fileMenu.add(jMenuRegistrar);
+
+        jMenuModificar.setText("Modificar");
+        fileMenu.add(jMenuModificar);
+
+        menuBar.add(fileMenu);
+
+        editMenu.setMnemonic('e');
+        editMenu.setText("Reporte");
+
+        cutMenuItem.setMnemonic('t');
+        cutMenuItem.setText("Cut");
+        editMenu.add(cutMenuItem);
+
+        copyMenuItem.setMnemonic('y');
+        copyMenuItem.setText("Copy");
+        editMenu.add(copyMenuItem);
+
+        pasteMenuItem.setMnemonic('p');
+        pasteMenuItem.setText("Paste");
+        editMenu.add(pasteMenuItem);
+
+        deleteMenuItem.setMnemonic('d');
+        deleteMenuItem.setText("Delete");
+        editMenu.add(deleteMenuItem);
+
+        menuBar.add(editMenu);
+
+        helpMenu.setMnemonic('h');
+        helpMenu.setText("Consulta");
+
+        contentMenuItem.setMnemonic('c');
+        contentMenuItem.setText("INGRESOS");
+        helpMenu.add(contentMenuItem);
+
+        aboutMenuItem.setMnemonic('a');
+        aboutMenuItem.setText("COLCAS");
+        helpMenu.add(aboutMenuItem);
+
+        jMenu6.setText("LIQUIDACION GENERAL");
+        helpMenu.add(jMenu6);
+
+        jMenu7.setText("ACUDE");
+        helpMenu.add(jMenu7);
+
+        jMenu8.setText("ROMANEO");
+
+        jMenuItem1.setText("CLIENTE");
+        jMenu8.add(jMenuItem1);
+
+        helpMenu.add(jMenu8);
+
+        jMenuItem7.setText("BUSQUEDA");
+        jMenuItem7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem7ActionPerformed(evt);
+            }
+        });
+        helpMenu.add(jMenuItem7);
+
+        menuBar.add(helpMenu);
+
+        jMenu1.setText("Balanza");
+
+        jMenuItem2.setText("BALANZA GRANDE");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItem2);
+
+        jMenuItem3.setText("BALANZA CHICA");
+        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem3ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItem3);
+
+        menuBar.add(jMenu1);
+
+        jMenu2.setText("Orden de Produccion");
+
+        jMenuItem4.setText("Generar Orden de Produccion");
+        jMenu2.add(jMenuItem4);
+
+        jMenuItem5.setText("Modificar Orden de Produccion");
+        jMenu2.add(jMenuItem5);
+
+        jMenuItem6.setText("Estado de Orden de Produccion");
+        jMenu2.add(jMenuItem6);
+
+        menuBar.add(jMenu2);
+
+        jMenu3.setText("Liquidacion");
+        menuBar.add(jMenu3);
+
+        jMenu4.setText("Backup");
+        menuBar.add(jMenu4);
+
+        jMenu5.setText("Salir");
+        jMenu5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenu5ActionPerformed(evt);
+            }
+        });
+        menuBar.add(jMenu5);
+
+        setJMenuBar(menuBar);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(escritorio, javax.swing.GroupLayout.DEFAULT_SIZE, 774, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(escritorio, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 517, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void menuItemPuertoSerieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemPuertoSerieActionPerformed
+        // TODO add your handling code here:
+        Presentacion.Sistema.FrmPortCom form = new Presentacion.Sistema.FrmPortCom();
+        escritorio.add(form);
+        form.toFront();
+        form.setVisible(true);
+    }//GEN-LAST:event_menuItemPuertoSerieActionPerformed
+
+    private void menuItemBaseDatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemBaseDatosActionPerformed
+        // TODO add your handling code here:
+        Presentacion.Sistema.FrmConfigurarDB form = new Presentacion.Sistema.FrmConfigurarDB();
+        escritorio.add(form);
+        form.toFront();
+        form.setVisible(true);
+    }//GEN-LAST:event_menuItemBaseDatosActionPerformed
+
+    private void menuItemCamaraVigilanciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemCamaraVigilanciaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_menuItemCamaraVigilanciaActionPerformed
+
+    private void menuItemUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemUsuarioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_menuItemUsuarioActionPerformed
+
+    private void menuItemConductorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemConductorActionPerformed
+        // TODO add your handling code here:
+        Presentacion.Registrar.FrmRegistroChoferes form = new Presentacion.Registrar.FrmRegistroChoferes();
+        escritorio.add(form);
+        form.toFront();
+        form.setVisible(true);
+
+    }//GEN-LAST:event_menuItemConductorActionPerformed
+
+    private void jMenu5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu5ActionPerformed
+        // TODO add your handling code here:
+
+
+    }//GEN-LAST:event_jMenu5ActionPerformed
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        // TODO add your handling code here:
+        Presentacion.Registrar.FrmBalanzaGrande form = new Presentacion.Registrar.FrmBalanzaGrande();
+        escritorio.add(form);
+        form.toFront();
+        form.setVisible(true);
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
+
+    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+        // TODO add your handling code here:
+        Presentacion.Registrar.FrmBalanzaChica form = new Presentacion.Registrar.FrmBalanzaChica();
+        escritorio.add(form);
+        form.toFront();
+        form.setVisible(true);
+    }//GEN-LAST:event_jMenuItem3ActionPerformed
+
+    private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
+        // TODO add your handling code here:
+        Presentacion.FrmBusqueda form = new Presentacion.FrmBusqueda();
+        escritorio.add(form);
+        form.toFront();
+        form.setVisible(true);
+    }//GEN-LAST:event_jMenuItem7ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -78,5 +358,44 @@ public class FrmPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem aboutMenuItem;
+    private javax.swing.JMenuItem contentMenuItem;
+    private javax.swing.JMenuItem copyMenuItem;
+    private javax.swing.JMenuItem cutMenuItem;
+    private javax.swing.JMenuItem deleteMenuItem;
+    private javax.swing.JMenu editMenu;
+    private javax.swing.JDesktopPane escritorio;
+    private javax.swing.JMenu fileMenu;
+    private javax.swing.JMenu helpMenu;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenu jMenu4;
+    private javax.swing.JMenu jMenu5;
+    private javax.swing.JMenu jMenu6;
+    private javax.swing.JMenu jMenu7;
+    private javax.swing.JMenu jMenu8;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItem3;
+    private javax.swing.JMenuItem jMenuItem4;
+    private javax.swing.JMenuItem jMenuItem5;
+    private javax.swing.JMenuItem jMenuItem6;
+    private javax.swing.JMenuItem jMenuItem7;
+    private javax.swing.JMenu jMenuModificar;
+    private javax.swing.JMenu jMenuRegistrar;
+    private javax.swing.JMenu jMenuSistema;
+    private javax.swing.JMenuBar menuBar;
+    private javax.swing.JMenuItem menuItemAcopiador;
+    private javax.swing.JMenuItem menuItemAgricultor;
+    private javax.swing.JMenuItem menuItemBaseDatos;
+    private javax.swing.JMenuItem menuItemCamaraVigilancia;
+    private javax.swing.JMenuItem menuItemConductor;
+    private javax.swing.JMenuItem menuItemLote;
+    private javax.swing.JMenuItem menuItemProductosAlgodon;
+    private javax.swing.JMenuItem menuItemPuertoSerie;
+    private javax.swing.JMenuItem menuItemUsuario;
+    private javax.swing.JMenuItem pasteMenuItem;
     // End of variables declaration//GEN-END:variables
+
 }

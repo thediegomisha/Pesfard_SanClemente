@@ -8,7 +8,7 @@ package Presentacion.Registrar;
  *
  * @author Juan Luis Diaz Aylas
  */
-public class FrmRegistroChoferes extends javax.swing.JFrame {
+public class FrmRegistroChoferes extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form FrmRegistroChoferes

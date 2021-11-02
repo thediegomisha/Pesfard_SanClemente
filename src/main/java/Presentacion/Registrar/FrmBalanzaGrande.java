@@ -8,7 +8,7 @@ package Presentacion.Registrar;
  *
  * @author Juan Luis Diaz Aylas
  */
-public class FrmBalanzaGrande extends javax.swing.JFrame {
+public class FrmBalanzaGrande extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form FrmBalanzaGrande

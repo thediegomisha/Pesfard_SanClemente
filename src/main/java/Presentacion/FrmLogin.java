@@ -32,16 +32,16 @@ public class FrmLogin extends javax.swing.JFrame {
     private void initComponents() {
 
         bg = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        lblclave = new javax.swing.JLabel();
         lblnombreempresa = new javax.swing.JLabel();
+        bgfondo = new javax.swing.JLabel();
+        lblclave = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         lblusuario = new javax.swing.JLabel();
         txtusuario = new javax.swing.JTextField();
         jSeparator1 = new javax.swing.JSeparator();
         jSeparator2 = new javax.swing.JSeparator();
         txtclave = new javax.swing.JPasswordField();
-        jPanel1 = new javax.swing.JPanel();
+        btnPanelIngresar = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jpExitButon = new javax.swing.JPanel();
         lblExitButton = new javax.swing.JLabel();
@@ -53,24 +53,25 @@ public class FrmLogin extends javax.swing.JFrame {
         bg.setBackground(new java.awt.Color(255, 255, 255));
         bg.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setBackground(new java.awt.Color(204, 255, 51));
-        bg.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 20, 200, 410));
+        lblnombreempresa.setFont(new java.awt.Font("Roboto Black", 1, 18)); // NOI18N
+        lblnombreempresa.setText("DESMOTADORA ALTO AMAZONAS");
+        bg.add(lblnombreempresa, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 200, -1, 30));
+
+        bgfondo.setBackground(new java.awt.Color(204, 255, 51));
+        bgfondo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        bg.add(bgfondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 0, 400, 470));
 
         lblclave.setFont(new java.awt.Font("Roboto Black", 1, 18)); // NOI18N
         lblclave.setText("CONTRASEÑA");
-        bg.add(lblclave, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 260, -1, -1));
-
-        lblnombreempresa.setFont(new java.awt.Font("Roboto Black", 1, 18)); // NOI18N
-        lblnombreempresa.setText("NOMBRE DE EMPRESA");
-        bg.add(lblnombreempresa, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 200, -1, -1));
+        bg.add(lblclave, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 160, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Roboto Black", 1, 18)); // NOI18N
         jLabel4.setText("INICIO DE SESION");
-        bg.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 90, -1, -1));
+        bg.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 30, -1, -1));
 
         lblusuario.setFont(new java.awt.Font("Roboto Black", 1, 18)); // NOI18N
         lblusuario.setText("USUARIO");
-        bg.add(lblusuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, -1, -1));
+        bg.add(lblusuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, -1, -1));
 
         txtusuario.setFont(new java.awt.Font("Roboto Black", 0, 14)); // NOI18N
         txtusuario.setForeground(new java.awt.Color(204, 204, 204));
@@ -81,9 +82,9 @@ public class FrmLogin extends javax.swing.JFrame {
                 txtusuarioMousePressed(evt);
             }
         });
-        bg.add(txtusuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 180, 270, -1));
-        bg.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 200, 270, 20));
-        bg.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 320, 270, 20));
+        bg.add(txtusuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, 270, -1));
+        bg.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 130, 270, 20));
+        bg.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 210, 270, 20));
 
         txtclave.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         txtclave.setForeground(new java.awt.Color(204, 204, 204));
@@ -94,9 +95,9 @@ public class FrmLogin extends javax.swing.JFrame {
                 txtclaveMousePressed(evt);
             }
         });
-        bg.add(txtclave, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 300, 270, -1));
+        bg.add(txtclave, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 190, 270, -1));
 
-        jPanel1.setBackground(new java.awt.Color(102, 153, 255));
+        btnPanelIngresar.setBackground(new java.awt.Color(102, 153, 255));
 
         jLabel2.setFont(new java.awt.Font("Roboto Black", 0, 14)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -107,18 +108,18 @@ public class FrmLogin extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout btnPanelIngresarLayout = new javax.swing.GroupLayout(btnPanelIngresar);
+        btnPanelIngresar.setLayout(btnPanelIngresarLayout);
+        btnPanelIngresarLayout.setHorizontalGroup(
+            btnPanelIngresarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        btnPanelIngresarLayout.setVerticalGroup(
+            btnPanelIngresarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
         );
 
-        bg.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 350, 140, 30));
+        bg.add(btnPanelIngresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 260, 140, 30));
 
         jpExitButon.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -267,10 +268,10 @@ public class FrmLogin extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel bg;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel bgfondo;
+    private javax.swing.JPanel btnPanelIngresar;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JPanel jpExitButon;

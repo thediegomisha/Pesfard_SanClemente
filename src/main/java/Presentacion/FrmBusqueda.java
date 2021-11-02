@@ -8,7 +8,7 @@ package Presentacion;
  *
  * @author Juan Luis Diaz Aylas
  */
-public class FrmBusqueda extends javax.swing.JFrame {
+public class FrmBusqueda extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form FrmBusqueda

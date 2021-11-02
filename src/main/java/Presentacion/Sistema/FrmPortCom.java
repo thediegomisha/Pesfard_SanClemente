@@ -14,7 +14,7 @@ import jssc.SerialPort;
  *
  * @author Juan Luis Diaz Aylas
  */
-public class FrmPortCom extends javax.swing.JFrame {
+public class FrmPortCom extends javax.swing.JInternalFrame {
 
     SerialPortList puertoserial;
 
@@ -91,23 +91,32 @@ public class FrmPortCom extends javax.swing.JFrame {
     }
 
     private void habilitarpuertoG() {
-        if (chkBalanzaGrande.isSelected()) {
+        try {
+            if (chkBalanzaGrande.isSelected()) {
             ActivarOpcionesBalanzaG();
             jpanel.updateUI();
         } else {
             DesactivarOpcionesBalanzaG();
             jpanel.updateUI();
         }
+        } catch (Exception e) {
+        }
+        
     }
 
     private void habilitarpuertoC() {
-        if (chkBalanzaChica.isSelected()) {
+        try {
+            if (chkBalanzaChica.isSelected()) {
             ActivarOpcionesBalanzaC();
             jpanel.updateUI();
         } else {
             DesactivarOpcionesBalanzaC();
             jpanel.updateUI();
         }
+        } catch (Exception e) {
+        }
+            
+        
     }
 
     /**
@@ -153,6 +162,7 @@ public class FrmPortCom extends javax.swing.JFrame {
         setTitle("Configurar Puerto COM");
 
         jpanel.setBackground(new java.awt.Color(51, 204, 0));
+        jpanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnGuardar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnGuardar.setText("Guardar");
@@ -161,6 +171,7 @@ public class FrmPortCom extends javax.swing.JFrame {
                 btnGuardarActionPerformed(evt);
             }
         });
+        jpanel.add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(128, 447, -1, -1));
 
         btnSalir.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnSalir.setText("Salir");
@@ -169,15 +180,19 @@ public class FrmPortCom extends javax.swing.JFrame {
                 btnSalirActionPerformed(evt);
             }
         });
+        jpanel.add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 447, -1, -1));
 
         jLabel1.setFont(new java.awt.Font("Arial Narrow", 3, 16)); // NOI18N
         jLabel1.setText("<html>Esta Ventana permite configurar los Puertos Serie de su sistema, Proceda con precaucion, podría dejar el sistema inutilizable</html>");
+        jpanel.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(158, 0, 176, 143));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel2.setText("BALANZA GRANDE");
+        jpanel.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 157, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel3.setText("BALANZA CHICA");
+        jpanel.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 287, -1, -1));
 
         cbBalanzaGrande.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         cbBalanzaGrande.addPopupMenuListener(new javax.swing.event.PopupMenuListener() {
@@ -189,70 +204,87 @@ public class FrmPortCom extends javax.swing.JFrame {
                 cbBalanzaGrandePopupMenuWillBecomeVisible(evt);
             }
         });
+        jpanel.add(cbBalanzaGrande, new org.netbeans.lib.awtextra.AbsoluteConstraints(168, 154, 113, -1));
 
         cbBalanzaChica.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jpanel.add(cbBalanzaChica, new org.netbeans.lib.awtextra.AbsoluteConstraints(168, 284, 113, -1));
 
         jLabel4.setText("Baudios");
+        jpanel.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, -1, -1));
 
         jLabel5.setText("Paridad");
+        jpanel.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(21, 238, -1, -1));
 
         cbBaudiosG.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "110", "300", "600", "1200", "4800", "9600", "14400", "19200", "38400", "57600", "115200", "128000", "256000" }));
         cbBaudiosG.setSelectedIndex(-1);
+        jpanel.add(cbBaudiosG, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 197, 72, -1));
 
         cbParidadG.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NINGUNA", "IMPAR", "PAR", "MARCA", "ESPACIO" }));
         cbParidadG.setSelectedIndex(-1);
+        jpanel.add(cbParidadG, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 235, -1, -1));
 
         jLabel6.setText("Bit de Datos");
+        jpanel.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(197, 200, -1, -1));
 
         jLabel7.setText("Bit de Parada");
+        jpanel.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(197, 238, -1, -1));
 
         cbDatosG.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "5", "6", "7", "8" }));
         cbDatosG.setSelectedIndex(-1);
+        jpanel.add(cbDatosG, new org.netbeans.lib.awtextra.AbsoluteConstraints(293, 197, 42, -1));
 
         cbParadaG.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "1.5" }));
         cbParadaG.setSelectedIndex(-1);
+        jpanel.add(cbParadaG, new org.netbeans.lib.awtextra.AbsoluteConstraints(293, 235, -1, -1));
 
-        chkBalanzaGrande.addItemListener(new java.awt.event.ItemListener() {
-            public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                chkBalanzaGrandeItemStateChanged(evt);
-            }
-        });
         chkBalanzaGrande.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 chkBalanzaGrandeActionPerformed(evt);
             }
         });
+        jpanel.add(chkBalanzaGrande, new org.netbeans.lib.awtextra.AbsoluteConstraints(313, 154, -1, -1));
 
         chkBalanzaChica.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 chkBalanzaChicaActionPerformed(evt);
             }
         });
+        jpanel.add(chkBalanzaChica, new org.netbeans.lib.awtextra.AbsoluteConstraints(314, 284, -1, -1));
 
         jLabel8.setText("Paridad");
+        jpanel.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 371, -1, -1));
 
         cbBaudiosC.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "110", "300", "600", "1200", "4800", "9600", "14400", "19200", "38400", "57600", "115200", "128000", "256000" }));
         cbBaudiosC.setSelectedIndex(-1);
+        jpanel.add(cbBaudiosC, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 330, 72, -1));
 
         cbParidadC.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NINGUNA", "IMPAR", "PAR", "MARCA", "ESPACIO" }));
         cbParidadC.setSelectedIndex(-1);
+        jpanel.add(cbParidadC, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 368, -1, -1));
 
         jLabel9.setText("Bit de Datos");
+        jpanel.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(201, 336, -1, -1));
 
         jLabel10.setText("Bit de Parada");
+        jpanel.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(201, 368, -1, -1));
 
         cbDatosC.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "5", "6", "7", "8" }));
         cbDatosC.setSelectedIndex(-1);
+        jpanel.add(cbDatosC, new org.netbeans.lib.awtextra.AbsoluteConstraints(293, 330, 42, -1));
 
         cbParadaC.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "1.5" }));
         cbParadaC.setSelectedIndex(-1);
+        jpanel.add(cbParadaC, new org.netbeans.lib.awtextra.AbsoluteConstraints(293, 368, -1, -1));
 
         jLabel11.setText("Baudios");
+        jpanel.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 333, -1, -1));
 
         jLabel12.setText("Los cambios surtiran efecto, luego reiniciar la aplicacion. Cierre el Sistema y vuelva a ingresar");
+        jpanel.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 399, 338, 30));
 
         btnActualizar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnActualizar.setText("Actualizar");
+        jpanel.add(btnActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 447, -1, -1));
 
         btnOpen.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnOpen.setText("Open");
@@ -261,143 +293,7 @@ public class FrmPortCom extends javax.swing.JFrame {
                 btnOpenActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout jpanelLayout = new javax.swing.GroupLayout(jpanel);
-        jpanel.setLayout(jpanelLayout);
-        jpanelLayout.setHorizontalGroup(
-            jpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jpanelLayout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addGroup(jpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jpanelLayout.createSequentialGroup()
-                        .addGroup(jpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 338, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel3)
-                            .addGroup(jpanelLayout.createSequentialGroup()
-                                .addGroup(jpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jpanelLayout.createSequentialGroup()
-                                        .addGroup(jpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(jLabel5)
-                                            .addComponent(jLabel4))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addGroup(jpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(cbParidadG, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(cbBaudiosG, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                                    .addGroup(jpanelLayout.createSequentialGroup()
-                                        .addGroup(jpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel8)
-                                            .addComponent(jLabel11))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addGroup(jpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(cbBaudiosC, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(cbParidadC, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addGroup(jpanelLayout.createSequentialGroup()
-                                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(1, 1, 1))
-                                    .addGroup(jpanelLayout.createSequentialGroup()
-                                        .addGap(10, 10, 10)
-                                        .addGroup(jpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jpanelLayout.createSequentialGroup()
-                                                .addComponent(cbBalanzaChica, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addComponent(chkBalanzaChica))
-                                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jpanelLayout.createSequentialGroup()
-                                                .addComponent(cbBalanzaGrande, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGap(32, 32, 32)
-                                                .addComponent(chkBalanzaGrande))
-                                            .addGroup(jpanelLayout.createSequentialGroup()
-                                                .addGap(33, 33, 33)
-                                                .addGroup(jpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(jLabel9)
-                                                    .addComponent(jLabel10))
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addGroup(jpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                    .addComponent(cbParadaC, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                    .addComponent(cbDatosC, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                                            .addGroup(jpanelLayout.createSequentialGroup()
-                                                .addGroup(jpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(jLabel6)
-                                                    .addComponent(jLabel7))
-                                                .addGap(32, 32, 32)
-                                                .addGroup(jpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                    .addComponent(cbParadaG, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                    .addComponent(cbDatosG, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpanelLayout.createSequentialGroup()
-                        .addComponent(btnActualizar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
-                        .addGroup(jpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnOpen)
-                            .addGroup(jpanelLayout.createSequentialGroup()
-                                .addComponent(btnGuardar)
-                                .addGap(61, 61, 61)
-                                .addComponent(btnSalir)))
-                        .addGap(49, 49, 49))))
-        );
-        jpanelLayout.setVerticalGroup(
-            jpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpanelLayout.createSequentialGroup()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(chkBalanzaGrande)
-                    .addGroup(jpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel2)
-                        .addComponent(cbBalanzaGrande, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 18, 18)
-                .addGroup(jpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(cbBaudiosG, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel6)
-                    .addComponent(cbDatosG, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(cbParidadG, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel7)
-                    .addComponent(cbParadaG, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(29, 29, 29)
-                .addGroup(jpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(chkBalanzaChica, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel3)
-                        .addComponent(cbBalanzaChica, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGroup(jpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jpanelLayout.createSequentialGroup()
-                        .addGroup(jpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jpanelLayout.createSequentialGroup()
-                                .addGap(21, 21, 21)
-                                .addGroup(jpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel11)
-                                    .addComponent(cbBaudiosC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpanelLayout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel9)))
-                        .addGap(18, 18, 18)
-                        .addGroup(jpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jLabel8)
-                                .addComponent(cbParidadC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel10)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpanelLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(cbDatosC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(cbParadaC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(jpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnSalir)
-                    .addComponent(btnGuardar)
-                    .addComponent(btnActualizar))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnOpen)
-                .addContainerGap(13, Short.MAX_VALUE))
-        );
+        jpanel.add(btnOpen, new org.netbeans.lib.awtextra.AbsoluteConstraints(128, 481, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -405,7 +301,7 @@ public class FrmPortCom extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jpanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 21, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -420,10 +316,6 @@ public class FrmPortCom extends javax.swing.JFrame {
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
         this.dispose();
     }//GEN-LAST:event_btnSalirActionPerformed
-
-    private void chkBalanzaGrandeItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_chkBalanzaGrandeItemStateChanged
-        // TODO add your handling code here:
-    }//GEN-LAST:event_chkBalanzaGrandeItemStateChanged
 
     private void chkBalanzaGrandeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkBalanzaGrandeActionPerformed
         habilitarpuertoG();

@@ -6,6 +6,9 @@
       <SubComponents>
         <Menu class="javax.swing.JMenu" name="fileMenu">
           <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/imagenes/mini_engrane.png"/>
+            </Property>
             <Property name="mnemonic" type="int" value="102"/>
             <Property name="text" type="java.lang.String" value="Mantenimiento"/>
           </Properties>
@@ -17,6 +20,9 @@
               <SubComponents>
                 <MenuItem class="javax.swing.JMenuItem" name="menuItemBaseDatos">
                   <Properties>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/imagenes/mini_bd.png"/>
+                    </Property>
                     <Property name="mnemonic" type="int" value="111"/>
                     <Property name="text" type="java.lang.String" value="Configurar Base de Datos"/>
                   </Properties>
@@ -26,6 +32,9 @@
                 </MenuItem>
                 <MenuItem class="javax.swing.JMenuItem" name="menuItemPuertoSerie">
                   <Properties>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/imagenes/mini_serialport.jpg"/>
+                    </Property>
                     <Property name="mnemonic" type="int" value="97"/>
                     <Property name="text" type="java.lang.String" value="Configurar Puerto Serie"/>
                   </Properties>
@@ -51,6 +60,9 @@
               <SubComponents>
                 <MenuItem class="javax.swing.JMenuItem" name="menuItemAgricultor">
                   <Properties>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/imagenes/mini_agricultor.png"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Registrar Agricultor"/>
                   </Properties>
                 </MenuItem>
@@ -69,11 +81,17 @@
                 </MenuItem>
                 <MenuItem class="javax.swing.JMenuItem" name="menuItemLote">
                   <Properties>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/imagenes/lote.png"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Registrar Lote"/>
                   </Properties>
                 </MenuItem>
                 <MenuItem class="javax.swing.JMenuItem" name="menuItemUsuario">
                   <Properties>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/imagenes/administrador.png"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Registrar Usuario"/>
                   </Properties>
                   <Events>
@@ -153,6 +171,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="ACUDE"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenu7ActionPerformed"/>
+              </Events>
             </Menu>
             <Menu class="javax.swing.JMenu" name="jMenu8">
               <Properties>
@@ -183,6 +204,9 @@
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="jMenuItem2">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/imagenes/camion.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="BALANZA GRANDE"/>
               </Properties>
               <Events>
@@ -265,12 +289,16 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="escritorio" pref="774" max="32767" attributes="0"/>
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="escritorio" pref="754" max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+          </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="escritorio" alignment="1" pref="517" max="32767" attributes="0"/>
+          <Component id="escritorio" alignment="1" pref="1168" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>

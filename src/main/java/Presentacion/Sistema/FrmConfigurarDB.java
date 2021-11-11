@@ -43,8 +43,9 @@ public class FrmConfigurarDB extends javax.swing.JInternalFrame {
         btnSalir = new javax.swing.JButton();
         btnGuardar1 = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Configuración de Conexión del Servidor MySQL");
 
         jPanel1.setBackground(new java.awt.Color(102, 255, 102));
@@ -173,6 +174,10 @@ public class FrmConfigurarDB extends javax.swing.JInternalFrame {
         jLabel7.setText("Cambiar la configuracion del Servidor MySQL");
         jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 11, -1, -1));
 
+        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mini_bd(1).png"))); // NOI18N
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 100, 120));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -245,6 +250,7 @@ public class FrmConfigurarDB extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JTextField txtBaseDeDatos;

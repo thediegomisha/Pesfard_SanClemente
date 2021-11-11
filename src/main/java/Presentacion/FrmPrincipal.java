@@ -70,11 +70,13 @@ public class FrmPrincipal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        fileMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mini_engrane.png"))); // NOI18N
         fileMenu.setMnemonic('f');
         fileMenu.setText("Mantenimiento");
 
         jMenuSistema.setText("Sistema");
 
+        menuItemBaseDatos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mini_bd.png"))); // NOI18N
         menuItemBaseDatos.setMnemonic('o');
         menuItemBaseDatos.setText("Configurar Base de Datos");
         menuItemBaseDatos.addActionListener(new java.awt.event.ActionListener() {
@@ -84,6 +86,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
         });
         jMenuSistema.add(menuItemBaseDatos);
 
+        menuItemPuertoSerie.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mini_serialport.jpg"))); // NOI18N
         menuItemPuertoSerie.setMnemonic('a');
         menuItemPuertoSerie.setText("Configurar Puerto Serie");
         menuItemPuertoSerie.addActionListener(new java.awt.event.ActionListener() {
@@ -106,6 +109,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
 
         jMenuRegistrar.setText("Registrar");
 
+        menuItemAgricultor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mini_agricultor.png"))); // NOI18N
         menuItemAgricultor.setText("Registrar Agricultor");
         jMenuRegistrar.add(menuItemAgricultor);
 
@@ -120,9 +124,11 @@ public class FrmPrincipal extends javax.swing.JFrame {
         });
         jMenuRegistrar.add(menuItemConductor);
 
+        menuItemLote.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/lote.png"))); // NOI18N
         menuItemLote.setText("Registrar Lote");
         jMenuRegistrar.add(menuItemLote);
 
+        menuItemUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/administrador.png"))); // NOI18N
         menuItemUsuario.setText("Registrar Usuario");
         menuItemUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -177,6 +183,11 @@ public class FrmPrincipal extends javax.swing.JFrame {
         helpMenu.add(jMenu6);
 
         jMenu7.setText("ACUDE");
+        jMenu7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenu7ActionPerformed(evt);
+            }
+        });
         helpMenu.add(jMenu7);
 
         jMenu8.setText("ROMANEO");
@@ -198,6 +209,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
 
         jMenu1.setText("Balanza");
 
+        jMenuItem2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/camion.png"))); // NOI18N
         jMenuItem2.setText("BALANZA GRANDE");
         jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -249,11 +261,14 @@ public class FrmPrincipal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(escritorio, javax.swing.GroupLayout.DEFAULT_SIZE, 774, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(escritorio, javax.swing.GroupLayout.DEFAULT_SIZE, 754, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(escritorio, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 517, Short.MAX_VALUE)
+            .addComponent(escritorio, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1168, Short.MAX_VALUE)
         );
 
         pack();
@@ -321,6 +336,10 @@ public class FrmPrincipal extends javax.swing.JFrame {
         form.toFront();
         form.setVisible(true);
     }//GEN-LAST:event_jMenuItem7ActionPerformed
+
+    private void jMenu7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu7ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenu7ActionPerformed
 
     /**
      * @param args the command line arguments

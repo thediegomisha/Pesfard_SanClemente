@@ -4,11 +4,17 @@
  */
 package Presentacion;
 
+import Util.PosicionFormulario;
+// import java.awt.Dimension;
+// import java.awt.Toolkit;
+
 /**
  *
  * @author Juan Luis Diaz Aylas
  */
 public class FrmPrincipal extends javax.swing.JFrame {
+
+    PosicionFormulario form = new PosicionFormulario();
 
     /**
      * Creates new form FrmPrincipal
@@ -37,6 +43,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
         menuItemPuertoSerie = new javax.swing.JMenuItem();
         menuItemCamaraVigilancia = new javax.swing.JMenuItem();
         jMenuRegistrar = new javax.swing.JMenu();
+        menuItemCliente = new javax.swing.JMenuItem();
         menuItemAgricultor = new javax.swing.JMenuItem();
         menuItemAcopiador = new javax.swing.JMenuItem();
         menuItemConductor = new javax.swing.JMenuItem();
@@ -58,8 +65,8 @@ public class FrmPrincipal extends javax.swing.JFrame {
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenuItem7 = new javax.swing.JMenuItem();
         jMenu1 = new javax.swing.JMenu();
-        jMenuItem2 = new javax.swing.JMenuItem();
-        jMenuItem3 = new javax.swing.JMenuItem();
+        menuItemBalanzaGrande = new javax.swing.JMenuItem();
+        menuItemBalanzaChica = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         jMenuItem4 = new javax.swing.JMenuItem();
         jMenuItem5 = new javax.swing.JMenuItem();
@@ -74,6 +81,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
         fileMenu.setMnemonic('f');
         fileMenu.setText("Mantenimiento");
 
+        jMenuSistema.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mini_sistema.png"))); // NOI18N
         jMenuSistema.setText("Sistema");
 
         menuItemBaseDatos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mini_bd.png"))); // NOI18N
@@ -96,6 +104,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
         });
         jMenuSistema.add(menuItemPuertoSerie);
 
+        menuItemCamaraVigilancia.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mini_camara.png"))); // NOI18N
         menuItemCamaraVigilancia.setMnemonic('s');
         menuItemCamaraVigilancia.setText("Configurar Camara de Vigilancia");
         menuItemCamaraVigilancia.addActionListener(new java.awt.event.ActionListener() {
@@ -107,15 +116,36 @@ public class FrmPrincipal extends javax.swing.JFrame {
 
         fileMenu.add(jMenuSistema);
 
+        jMenuRegistrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/registrar1.png"))); // NOI18N
         jMenuRegistrar.setText("Registrar");
 
+        menuItemCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mini_cliente.png"))); // NOI18N
+        menuItemCliente.setText("Registrar Cliente");
+        menuItemCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuItemClienteActionPerformed(evt);
+            }
+        });
+        jMenuRegistrar.add(menuItemCliente);
+
+        menuItemAgricultor.setFont(new java.awt.Font("Roboto Black", 0, 12)); // NOI18N
+        menuItemAgricultor.setForeground(new java.awt.Color(0, 0, 255));
         menuItemAgricultor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mini_agricultor.png"))); // NOI18N
         menuItemAgricultor.setText("Registrar Agricultor");
+        menuItemAgricultor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuItemAgricultorActionPerformed(evt);
+            }
+        });
         jMenuRegistrar.add(menuItemAgricultor);
 
+        menuItemAcopiador.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mini_vendedor.png"))); // NOI18N
         menuItemAcopiador.setText("Registrar Acopiador");
         jMenuRegistrar.add(menuItemAcopiador);
 
+        menuItemConductor.setFont(new java.awt.Font("Roboto Black", 1, 12)); // NOI18N
+        menuItemConductor.setForeground(new java.awt.Color(0, 51, 204));
+        menuItemConductor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mini_placa.png"))); // NOI18N
         menuItemConductor.setText("Registrar Placa - Conductor");
         menuItemConductor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -124,8 +154,15 @@ public class FrmPrincipal extends javax.swing.JFrame {
         });
         jMenuRegistrar.add(menuItemConductor);
 
+        menuItemLote.setFont(new java.awt.Font("Roboto Black", 1, 12)); // NOI18N
+        menuItemLote.setForeground(new java.awt.Color(153, 0, 0));
         menuItemLote.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/lote.png"))); // NOI18N
         menuItemLote.setText("Registrar Lote");
+        menuItemLote.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuItemLoteActionPerformed(evt);
+            }
+        });
         jMenuRegistrar.add(menuItemLote);
 
         menuItemUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/administrador.png"))); // NOI18N
@@ -137,16 +174,19 @@ public class FrmPrincipal extends javax.swing.JFrame {
         });
         jMenuRegistrar.add(menuItemUsuario);
 
+        menuItemProductosAlgodon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/productos.png"))); // NOI18N
         menuItemProductosAlgodon.setText("Registrar Productos de Algodon");
         jMenuRegistrar.add(menuItemProductosAlgodon);
 
         fileMenu.add(jMenuRegistrar);
 
+        jMenuModificar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mini_editar.png"))); // NOI18N
         jMenuModificar.setText("Modificar");
         fileMenu.add(jMenuModificar);
 
         menuBar.add(fileMenu);
 
+        editMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mini_reporte.png"))); // NOI18N
         editMenu.setMnemonic('e');
         editMenu.setText("Reporte");
 
@@ -209,22 +249,27 @@ public class FrmPrincipal extends javax.swing.JFrame {
 
         jMenu1.setText("Balanza");
 
-        jMenuItem2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/camion.png"))); // NOI18N
-        jMenuItem2.setText("BALANZA GRANDE");
-        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+        menuItemBalanzaGrande.setFont(new java.awt.Font("Roboto Black", 1, 12)); // NOI18N
+        menuItemBalanzaGrande.setForeground(new java.awt.Color(0, 0, 153));
+        menuItemBalanzaGrande.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/camion.png"))); // NOI18N
+        menuItemBalanzaGrande.setText("BALANZA GRANDE");
+        menuItemBalanzaGrande.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem2ActionPerformed(evt);
+                menuItemBalanzaGrandeActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem2);
+        jMenu1.add(menuItemBalanzaGrande);
 
-        jMenuItem3.setText("BALANZA CHICA");
-        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+        menuItemBalanzaChica.setFont(new java.awt.Font("Roboto Black", 1, 12)); // NOI18N
+        menuItemBalanzaChica.setForeground(new java.awt.Color(255, 0, 0));
+        menuItemBalanzaChica.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mini_balanza.png"))); // NOI18N
+        menuItemBalanzaChica.setText("BALANZA CHICA");
+        menuItemBalanzaChica.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem3ActionPerformed(evt);
+                menuItemBalanzaChicaActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem3);
+        jMenu1.add(menuItemBalanzaChica);
 
         menuBar.add(jMenu1);
 
@@ -276,70 +321,78 @@ public class FrmPrincipal extends javax.swing.JFrame {
 
     private void menuItemPuertoSerieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemPuertoSerieActionPerformed
         // TODO add your handling code here:
-        Presentacion.Sistema.FrmPortCom form = new Presentacion.Sistema.FrmPortCom();
-        escritorio.add(form);
-        form.toFront();
-        form.setVisible(true);
+        Presentacion.Sistema.FrmPortCom pantalla;
+        form.abrirFormulario(pantalla = new Presentacion.Sistema.FrmPortCom(), escritorio);
     }//GEN-LAST:event_menuItemPuertoSerieActionPerformed
 
     private void menuItemBaseDatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemBaseDatosActionPerformed
         // TODO add your handling code here:
-        Presentacion.Sistema.FrmConfigurarDB form = new Presentacion.Sistema.FrmConfigurarDB();
-        escritorio.add(form);
-        form.toFront();
-        form.setVisible(true);
+        Presentacion.Sistema.FrmConfigurarDB pantalla;
+        form.abrirFormulario(pantalla = new Presentacion.Sistema.FrmConfigurarDB(), escritorio);
     }//GEN-LAST:event_menuItemBaseDatosActionPerformed
 
     private void menuItemCamaraVigilanciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemCamaraVigilanciaActionPerformed
         // TODO add your handling code here:
+         Presentacion.Sistema.FrmConfigurarCamaraVig pantalla;
+        form.abrirFormulario(pantalla = new Presentacion.Sistema.FrmConfigurarCamaraVig(), escritorio);
     }//GEN-LAST:event_menuItemCamaraVigilanciaActionPerformed
 
     private void menuItemUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemUsuarioActionPerformed
         // TODO add your handling code here:
+        Presentacion.Registrar.FrmUsuario pantalla;
+        form.abrirFormulario(pantalla = new Presentacion.Registrar.FrmUsuario(), escritorio);
     }//GEN-LAST:event_menuItemUsuarioActionPerformed
 
     private void menuItemConductorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemConductorActionPerformed
         // TODO add your handling code here:
-        Presentacion.Registrar.FrmRegistroChoferes form = new Presentacion.Registrar.FrmRegistroChoferes();
-        escritorio.add(form);
-        form.toFront();
-        form.setVisible(true);
+        Presentacion.Registrar.FrmRegistroChoferes pantalla;
+        form.abrirFormulario(pantalla = new Presentacion.Registrar.FrmRegistroChoferes(), escritorio);
 
     }//GEN-LAST:event_menuItemConductorActionPerformed
 
     private void jMenu5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu5ActionPerformed
         // TODO add your handling code here:
-
-
     }//GEN-LAST:event_jMenu5ActionPerformed
 
-    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+    private void menuItemBalanzaGrandeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemBalanzaGrandeActionPerformed
         // TODO add your handling code here:
-        Presentacion.Registrar.FrmBalanzaGrande form = new Presentacion.Registrar.FrmBalanzaGrande();
-        escritorio.add(form);
-        form.toFront();
-        form.setVisible(true);
-    }//GEN-LAST:event_jMenuItem2ActionPerformed
+        Presentacion.Registrar.FrmBalanzaGrande pantalla;
+        form.abrirFormulario(pantalla = new Presentacion.Registrar.FrmBalanzaGrande(), escritorio);
+    }//GEN-LAST:event_menuItemBalanzaGrandeActionPerformed
 
-    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+    private void menuItemBalanzaChicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemBalanzaChicaActionPerformed
         // TODO add your handling code here:
-        Presentacion.Registrar.FrmBalanzaChica form = new Presentacion.Registrar.FrmBalanzaChica();
-        escritorio.add(form);
-        form.toFront();
-        form.setVisible(true);
-    }//GEN-LAST:event_jMenuItem3ActionPerformed
+        Presentacion.Registrar.FrmBalanzaChica pantalla;
+        form.abrirFormulario(pantalla = new Presentacion.Registrar.FrmBalanzaChica(), escritorio);
+    }//GEN-LAST:event_menuItemBalanzaChicaActionPerformed
 
     private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
         // TODO add your handling code here:
-        Presentacion.FrmBusqueda form = new Presentacion.FrmBusqueda();
-        escritorio.add(form);
-        form.toFront();
-        form.setVisible(true);
+        Presentacion.FrmBusqueda pantalla;
+        form.abrirFormulario(pantalla = new Presentacion.FrmBusqueda(), escritorio);
     }//GEN-LAST:event_jMenuItem7ActionPerformed
 
     private void jMenu7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu7ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jMenu7ActionPerformed
+
+    private void menuItemClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemClienteActionPerformed
+        // TODO add your handling code here:
+        Presentacion.Registrar.FrmCliente pantalla;
+        form.abrirFormulario(pantalla = new Presentacion.Registrar.FrmCliente(), escritorio);
+    }//GEN-LAST:event_menuItemClienteActionPerformed
+
+    private void menuItemLoteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemLoteActionPerformed
+        // TODO add your handling code here:
+        Presentacion.Registrar.FrmCrearLote pantalla;
+        form.abrirFormulario(pantalla = new Presentacion.Registrar.FrmCrearLote(), escritorio);
+    }//GEN-LAST:event_menuItemLoteActionPerformed
+
+    private void menuItemAgricultorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemAgricultorActionPerformed
+        // TODO add your handling code here:
+        Presentacion.Registrar.FrmAgricultor pantalla;
+        form.abrirFormulario(pantalla = new Presentacion.Registrar.FrmAgricultor(), escritorio);
+    }//GEN-LAST:event_menuItemAgricultorActionPerformed
 
     /**
      * @param args the command line arguments
@@ -395,8 +448,6 @@ public class FrmPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu7;
     private javax.swing.JMenu jMenu8;
     private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenuItem jMenuItem6;
@@ -407,8 +458,11 @@ public class FrmPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuBar menuBar;
     private javax.swing.JMenuItem menuItemAcopiador;
     private javax.swing.JMenuItem menuItemAgricultor;
+    private javax.swing.JMenuItem menuItemBalanzaChica;
+    private javax.swing.JMenuItem menuItemBalanzaGrande;
     private javax.swing.JMenuItem menuItemBaseDatos;
     private javax.swing.JMenuItem menuItemCamaraVigilancia;
+    private javax.swing.JMenuItem menuItemCliente;
     private javax.swing.JMenuItem menuItemConductor;
     private javax.swing.JMenuItem menuItemLote;
     private javax.swing.JMenuItem menuItemProductosAlgodon;

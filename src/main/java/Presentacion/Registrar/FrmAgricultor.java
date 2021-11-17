@@ -6,28 +6,20 @@ package Presentacion.Registrar;
 
 import Logica.fcliente;
 
-
-
 /**
  *
  * @author Juan Luis Diaz Aylas
  */
-public class FrmCliente extends javax.swing.JInternalFrame {
+public class FrmAgricultor extends javax.swing.JInternalFrame {
 
-//    private conexion mysql = new conexion();
-//    private Connection cn = mysql.conectar();
-    fcliente fcliente = new fcliente();
-
+      fcliente fcliente = new fcliente();
     /**
-     * Creates new form FrmCliente
+     * Creates new form FrmAgricultor
      */
-    public FrmCliente() {
+    public FrmAgricultor() {
         initComponents();
-      //  setLocationRelativeTo(null);
-       
         
-
-        cbotipodocumento.removeAllItems();
+         cbotipodocumento.removeAllItems();
         fcliente.llenar_combo(cbotipodocumento);
         bgtiposexo.add(rbMasculino);
         bgtiposexo.add(rbFemenino);
@@ -43,16 +35,21 @@ public class FrmCliente extends javax.swing.JInternalFrame {
     private void initComponents() {
 
         bgtiposexo = new javax.swing.ButtonGroup();
-        jPanel2 = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
+        jPanel3 = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jTable2 = new javax.swing.JTable();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         txtnombre2 = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         txtApellidopaterno = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         txtApellidomaterno = new javax.swing.JTextField();
-        jLabel5 = new javax.swing.JLabel();
-        txtApellidomaterno1 = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         rbMasculino = new javax.swing.JRadioButton();
         rbFemenino = new javax.swing.JRadioButton();
@@ -70,119 +67,11 @@ public class FrmCliente extends javax.swing.JInternalFrame {
         cbotipodocumento = new javax.swing.JComboBox<>();
         jLabel11 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
-        jPanel3 = new javax.swing.JPanel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
-        jLabel12 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
 
         setClosable(true);
-        setTitle("Registro de Clientes");
-        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jPanel1.setBackground(new java.awt.Color(255, 255, 102));
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Registro de Clientes", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Roboto Black", 1, 14), new java.awt.Color(0, 51, 153))); // NOI18N
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel2.setFont(new java.awt.Font("Roboto Black", 0, 14)); // NOI18N
-        jLabel2.setText("Segundo Nombre");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, -1, -1));
-
-        txtnombre2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jPanel1.add(txtnombre2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 110, 210, -1));
-
-        jLabel3.setFont(new java.awt.Font("Roboto Black", 0, 14)); // NOI18N
-        jLabel3.setText("Apellido Paterno");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, -1, -1));
-
-        txtApellidopaterno.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jPanel1.add(txtApellidopaterno, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 150, 210, -1));
-
-        jLabel4.setFont(new java.awt.Font("Roboto Black", 0, 14)); // NOI18N
-        jLabel4.setText("Apellido Materno");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, -1, -1));
-
-        txtApellidomaterno.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jPanel1.add(txtApellidomaterno, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 180, 210, -1));
-
-        jLabel5.setFont(new java.awt.Font("Roboto Black", 0, 14)); // NOI18N
-        jLabel5.setText("Edad");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 320, -1, -1));
-
-        txtApellidomaterno1.setFont(new java.awt.Font("Roboto Black", 0, 12)); // NOI18N
-        jPanel1.add(txtApellidomaterno1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 320, 35, -1));
-
-        jLabel6.setFont(new java.awt.Font("Roboto Black", 0, 14)); // NOI18N
-        jLabel6.setText("Sexo");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 290, -1, -1));
-
-        rbMasculino.setFont(new java.awt.Font("Roboto Black", 0, 12)); // NOI18N
-        rbMasculino.setText("Masculino");
-        jPanel1.add(rbMasculino, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 290, -1, -1));
-
-        rbFemenino.setFont(new java.awt.Font("Roboto Black", 0, 12)); // NOI18N
-        rbFemenino.setText("Femenino");
-        jPanel1.add(rbFemenino, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 290, -1, -1));
-
-        jLabel7.setFont(new java.awt.Font("Roboto Black", 0, 14)); // NOI18N
-        jLabel7.setText("Direccion");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 370, -1, -1));
-
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(2);
-        jScrollPane1.setViewportView(jTextArea1);
-
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 390, 350, 60));
-
-        btnNuevo.setText("Nuevo");
-        jPanel1.add(btnNuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 460, -1, -1));
-
-        btnGuardar.setText("Guardar");
-        jPanel1.add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 460, -1, -1));
-
-        btnCancelar.setText("Cancelar");
-        btnCancelar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCancelarActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 460, -1, -1));
-
-        lblIdCliente.setFont(new java.awt.Font("Roboto Black", 0, 12)); // NOI18N
-        lblIdCliente.setText("IdCliente");
-        jPanel1.add(lblIdCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 40, -1, -1));
-
-        txtnombres1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jPanel1.add(txtnombres1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 70, 210, -1));
-
-        jLabel9.setFont(new java.awt.Font("Roboto Black", 0, 14)); // NOI18N
-        jLabel9.setText("N° Documento");
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, -1, -1));
-
-        txtApellidomaterno2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jPanel1.add(txtApellidomaterno2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 260, 140, -1));
-
-        jLabel10.setFont(new java.awt.Font("Roboto Black", 0, 14)); // NOI18N
-        jLabel10.setText("Tipo de Documento");
-        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, -1, -1));
-
-        cbotipodocumento.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
-        jPanel1.add(cbotipodocumento, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 220, 130, -1));
-
-        jLabel11.setFont(new java.awt.Font("Roboto Black", 0, 14)); // NOI18N
-        jLabel11.setText("Primer Nombre");
-        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, -1, -1));
-
-        jLabel13.setFont(new java.awt.Font("Roboto Black", 0, 14)); // NOI18N
-        jLabel13.setText("IdCliente");
-        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, -1, -1));
-
-        jPanel2.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 380, 500));
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
 
         jPanel3.setBackground(new java.awt.Color(153, 255, 255));
 
@@ -226,7 +115,7 @@ public class FrmCliente extends javax.swing.JInternalFrame {
                 .addContainerGap()
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 432, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(26, 26, 26)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 23, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                 .addContainerGap())
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(103, 103, 103)
@@ -240,9 +129,9 @@ public class FrmCliente extends javax.swing.JInternalFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(167, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(84, Short.MAX_VALUE)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 393, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -251,17 +140,126 @@ public class FrmCliente extends javax.swing.JInternalFrame {
                 .addContainerGap())
         );
 
-        jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 0, 450, 500));
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 462, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        jPanel2.setBackground(new java.awt.Color(255, 255, 102));
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Registro de Agricultores", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Roboto Black", 1, 14), new java.awt.Color(0, 51, 153))); // NOI18N
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel2.setFont(new java.awt.Font("Roboto Black", 0, 14)); // NOI18N
+        jLabel2.setText("Segundo Nombre");
+        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, -1, -1));
+
+        txtnombre2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jPanel2.add(txtnombre2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 90, 210, -1));
+
+        jLabel3.setFont(new java.awt.Font("Roboto Black", 0, 14)); // NOI18N
+        jLabel3.setText("Apellido Paterno");
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, -1, -1));
+
+        txtApellidopaterno.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jPanel2.add(txtApellidopaterno, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 130, 210, -1));
+
+        jLabel4.setFont(new java.awt.Font("Roboto Black", 0, 14)); // NOI18N
+        jLabel4.setText("Apellido Materno");
+        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, -1, -1));
+
+        txtApellidomaterno.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jPanel2.add(txtApellidomaterno, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 160, 210, -1));
+
+        jLabel6.setFont(new java.awt.Font("Roboto Black", 0, 14)); // NOI18N
+        jLabel6.setText("Sexo");
+        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 270, -1, -1));
+
+        rbMasculino.setFont(new java.awt.Font("Roboto Black", 0, 12)); // NOI18N
+        rbMasculino.setText("Masculino");
+        jPanel2.add(rbMasculino, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 270, -1, -1));
+
+        rbFemenino.setFont(new java.awt.Font("Roboto Black", 0, 12)); // NOI18N
+        rbFemenino.setText("Femenino");
+        jPanel2.add(rbFemenino, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 270, -1, -1));
+
+        jLabel7.setFont(new java.awt.Font("Roboto Black", 0, 14)); // NOI18N
+        jLabel7.setText("Direccion");
+        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 300, -1, -1));
+
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(2);
+        jScrollPane1.setViewportView(jTextArea1);
+
+        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 320, 350, 60));
+
+        btnNuevo.setText("Nuevo");
+        jPanel2.add(btnNuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 390, -1, -1));
+
+        btnGuardar.setText("Guardar");
+        jPanel2.add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 390, -1, -1));
+
+        btnCancelar.setText("Cancelar");
+        btnCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelarActionPerformed(evt);
+            }
+        });
+        jPanel2.add(btnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 390, -1, -1));
+
+        lblIdCliente.setFont(new java.awt.Font("Roboto Black", 0, 12)); // NOI18N
+        lblIdCliente.setText("IdAgricultor");
+        jPanel2.add(lblIdCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 20, -1, -1));
+
+        txtnombres1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jPanel2.add(txtnombres1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 50, 210, -1));
+
+        jLabel9.setFont(new java.awt.Font("Roboto Black", 0, 14)); // NOI18N
+        jLabel9.setText("N° Documento");
+        jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, -1, -1));
+
+        txtApellidomaterno2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jPanel2.add(txtApellidomaterno2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 240, 140, -1));
+
+        jLabel10.setFont(new java.awt.Font("Roboto Black", 0, 14)); // NOI18N
+        jLabel10.setText("Tipo de Documento");
+        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, -1, -1));
+
+        cbotipodocumento.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        jPanel2.add(cbotipodocumento, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 200, 130, -1));
+
+        jLabel11.setFont(new java.awt.Font("Roboto Black", 0, 14)); // NOI18N
+        jLabel11.setText("Primer Nombre");
+        jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, -1, -1));
+
+        jLabel13.setFont(new java.awt.Font("Roboto Black", 0, 14)); // NOI18N
+        jLabel13.setText("IdAgricultor");
+        jPanel2.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 502, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 421, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -288,24 +286,20 @@ public class FrmCliente extends javax.swing.JInternalFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(FrmCliente.class
-                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmAgricultor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(FrmCliente.class
-                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmAgricultor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(FrmCliente.class
-                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmAgricultor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(FrmCliente.class
-                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmAgricultor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new FrmCliente().setVisible(true);
+                new FrmAgricultor().setVisible(true);
             }
         });
     }
@@ -324,7 +318,6 @@ public class FrmCliente extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel9;
@@ -341,7 +334,6 @@ public class FrmCliente extends javax.swing.JInternalFrame {
     private javax.swing.JRadioButton rbFemenino;
     private javax.swing.JRadioButton rbMasculino;
     private javax.swing.JTextField txtApellidomaterno;
-    private javax.swing.JTextField txtApellidomaterno1;
     private javax.swing.JTextField txtApellidomaterno2;
     private javax.swing.JTextField txtApellidopaterno;
     private javax.swing.JTextField txtnombre2;

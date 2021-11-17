@@ -158,7 +158,8 @@ public class FrmPortCom extends javax.swing.JInternalFrame {
         btnActualizar = new javax.swing.JButton();
         btnOpen = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setClosable(true);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Configurar Puerto COM");
 
         jpanel.setBackground(new java.awt.Color(51, 204, 0));

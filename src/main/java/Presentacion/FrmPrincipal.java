@@ -52,10 +52,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
         menuItemProductosAlgodon = new javax.swing.JMenuItem();
         jMenuModificar = new javax.swing.JMenu();
         editMenu = new javax.swing.JMenu();
-        cutMenuItem = new javax.swing.JMenuItem();
-        copyMenuItem = new javax.swing.JMenuItem();
-        pasteMenuItem = new javax.swing.JMenuItem();
-        deleteMenuItem = new javax.swing.JMenuItem();
+        jMenuConsultaPesos = new javax.swing.JMenuItem();
         helpMenu = new javax.swing.JMenu();
         contentMenuItem = new javax.swing.JMenuItem();
         aboutMenuItem = new javax.swing.JMenuItem();
@@ -190,21 +187,14 @@ public class FrmPrincipal extends javax.swing.JFrame {
         editMenu.setMnemonic('e');
         editMenu.setText("Reporte");
 
-        cutMenuItem.setMnemonic('t');
-        cutMenuItem.setText("Cut");
-        editMenu.add(cutMenuItem);
-
-        copyMenuItem.setMnemonic('y');
-        copyMenuItem.setText("Copy");
-        editMenu.add(copyMenuItem);
-
-        pasteMenuItem.setMnemonic('p');
-        pasteMenuItem.setText("Paste");
-        editMenu.add(pasteMenuItem);
-
-        deleteMenuItem.setMnemonic('d');
-        deleteMenuItem.setText("Delete");
-        editMenu.add(deleteMenuItem);
+        jMenuConsultaPesos.setMnemonic('y');
+        jMenuConsultaPesos.setText("Consulta de Pesos");
+        jMenuConsultaPesos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuConsultaPesosActionPerformed(evt);
+            }
+        });
+        editMenu.add(jMenuConsultaPesos);
 
         menuBar.add(editMenu);
 
@@ -333,7 +323,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
 
     private void menuItemCamaraVigilanciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemCamaraVigilanciaActionPerformed
         // TODO add your handling code here:
-         Presentacion.Sistema.FrmConfigurarCamaraVig pantalla;
+        Presentacion.Sistema.FrmConfigurarCamaraVig pantalla;
         form.abrirFormulario(pantalla = new Presentacion.Sistema.FrmConfigurarCamaraVig(), escritorio);
     }//GEN-LAST:event_menuItemCamaraVigilanciaActionPerformed
 
@@ -394,6 +384,12 @@ public class FrmPrincipal extends javax.swing.JFrame {
         form.abrirFormulario(pantalla = new Presentacion.Registrar.FrmAgricultor(), escritorio);
     }//GEN-LAST:event_menuItemAgricultorActionPerformed
 
+    private void jMenuConsultaPesosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuConsultaPesosActionPerformed
+        // TODO add your handling code here:
+        Presentacion.Reportes.FrmConsultaPesos pantalla;
+        form.abrirFormulario(pantalla = new Presentacion.Reportes.FrmConsultaPesos(), escritorio);
+    }//GEN-LAST:event_jMenuConsultaPesosActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -432,9 +428,6 @@ public class FrmPrincipal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem aboutMenuItem;
     private javax.swing.JMenuItem contentMenuItem;
-    private javax.swing.JMenuItem copyMenuItem;
-    private javax.swing.JMenuItem cutMenuItem;
-    private javax.swing.JMenuItem deleteMenuItem;
     private javax.swing.JMenu editMenu;
     private javax.swing.JDesktopPane escritorio;
     private javax.swing.JMenu fileMenu;
@@ -447,6 +440,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu6;
     private javax.swing.JMenu jMenu7;
     private javax.swing.JMenu jMenu8;
+    private javax.swing.JMenuItem jMenuConsultaPesos;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
@@ -468,7 +462,6 @@ public class FrmPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem menuItemProductosAlgodon;
     private javax.swing.JMenuItem menuItemPuertoSerie;
     private javax.swing.JMenuItem menuItemUsuario;
-    private javax.swing.JMenuItem pasteMenuItem;
     // End of variables declaration//GEN-END:variables
 
 }

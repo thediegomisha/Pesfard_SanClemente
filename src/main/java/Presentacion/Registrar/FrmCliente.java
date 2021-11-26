@@ -27,8 +27,9 @@ public class FrmCliente extends javax.swing.JInternalFrame {
        
         
 
-        cbotipodocumento.removeAllItems();
+        cbotipodocumento.removeAllItems();        
         fcliente.llenar_combo(cbotipodocumento);
+        cbotipodocumento.setSelectedIndex(-1);
         bgtiposexo.add(rbMasculino);
         bgtiposexo.add(rbFemenino);
     }
@@ -51,8 +52,6 @@ public class FrmCliente extends javax.swing.JInternalFrame {
         txtApellidopaterno = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         txtApellidomaterno = new javax.swing.JTextField();
-        jLabel5 = new javax.swing.JLabel();
-        txtApellidomaterno1 = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         rbMasculino = new javax.swing.JRadioButton();
         rbFemenino = new javax.swing.JRadioButton();
@@ -70,6 +69,8 @@ public class FrmCliente extends javax.swing.JInternalFrame {
         cbotipodocumento = new javax.swing.JComboBox<>();
         jLabel11 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
+        jDateChooser1 = new com.toedter.calendar.JDateChooser();
+        jLabel5 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
@@ -78,6 +79,7 @@ public class FrmCliente extends javax.swing.JInternalFrame {
         jLabel12 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
 
+        setBorder(null);
         setClosable(true);
         setTitle("Registro de Clientes");
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -109,13 +111,6 @@ public class FrmCliente extends javax.swing.JInternalFrame {
 
         txtApellidomaterno.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jPanel1.add(txtApellidomaterno, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 180, 210, -1));
-
-        jLabel5.setFont(new java.awt.Font("Roboto Black", 0, 14)); // NOI18N
-        jLabel5.setText("Edad");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 320, -1, -1));
-
-        txtApellidomaterno1.setFont(new java.awt.Font("Roboto Black", 0, 12)); // NOI18N
-        jPanel1.add(txtApellidomaterno1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 320, 35, -1));
 
         jLabel6.setFont(new java.awt.Font("Roboto Black", 0, 14)); // NOI18N
         jLabel6.setText("Sexo");
@@ -181,6 +176,13 @@ public class FrmCliente extends javax.swing.JInternalFrame {
         jLabel13.setFont(new java.awt.Font("Roboto Black", 0, 14)); // NOI18N
         jLabel13.setText("IdCliente");
         jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, -1, -1));
+
+        jDateChooser1.setFont(new java.awt.Font("Roboto Black", 1, 14)); // NOI18N
+        jPanel1.add(jDateChooser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 330, 160, 30));
+
+        jLabel5.setFont(new java.awt.Font("Roboto Black", 0, 14)); // NOI18N
+        jLabel5.setText("Fecha de Nacimiento");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 330, -1, -1));
 
         jPanel2.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 380, 500));
 
@@ -316,6 +318,7 @@ public class FrmCliente extends javax.swing.JInternalFrame {
     private javax.swing.JButton btnGuardar;
     private javax.swing.JButton btnNuevo;
     private javax.swing.JComboBox<String> cbotipodocumento;
+    private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
@@ -341,7 +344,6 @@ public class FrmCliente extends javax.swing.JInternalFrame {
     private javax.swing.JRadioButton rbFemenino;
     private javax.swing.JRadioButton rbMasculino;
     private javax.swing.JTextField txtApellidomaterno;
-    private javax.swing.JTextField txtApellidomaterno1;
     private javax.swing.JTextField txtApellidomaterno2;
     private javax.swing.JTextField txtApellidopaterno;
     private javax.swing.JTextField txtnombre2;

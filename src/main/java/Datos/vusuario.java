@@ -1,26 +1,28 @@
-
 package Datos;
 
 /**
  *
  * @author Juan Luis Diaz Aylas
  */
-public class vtrabajador extends vpersona{
+public class vusuario extends vpersona {
+
     private double sueldo;
-    private String acceso;
     private String login;
     private String password;
     private String estado;
+    private int tipo_usuario;
+    private String Codigo_usuario;
 
-    public vtrabajador() {
+    public vusuario() {
     }
 
-    public vtrabajador(double sueldo, String acceso, String login, String password, String estado) {
+    public vusuario(double sueldo, String login, String password, String estado, int tipo_usuario, String Codigo_usuario) {
         this.sueldo = sueldo;
-        this.acceso = acceso;
         this.login = login;
         this.password = password;
         this.estado = estado;
+        this.tipo_usuario = tipo_usuario;
+        this.Codigo_usuario = Codigo_usuario;
     }
 
     public double getSueldo() {
@@ -29,14 +31,6 @@ public class vtrabajador extends vpersona{
 
     public void setSueldo(double sueldo) {
         this.sueldo = sueldo;
-    }
-
-    public String getAcceso() {
-        return acceso;
-    }
-
-    public void setAcceso(String acceso) {
-        this.acceso = acceso;
     }
 
     public String getLogin() {
@@ -62,6 +56,22 @@ public class vtrabajador extends vpersona{
     public void setEstado(String estado) {
         this.estado = estado;
     }
-    
 
+    public int getTipo_usuario() {
+        return tipo_usuario;
+    }
+
+    public void setTipo_usuario(int tipo_usuario) {
+        this.tipo_usuario = tipo_usuario;
+    }
+
+    public String getCodigo_usuario() {
+        return Codigo_usuario;
+    }
+
+    public void setCodigo_usuario(String Codigo_usuario) {
+        this.Codigo_usuario = Codigo_usuario;
+    }
+
+  
 }

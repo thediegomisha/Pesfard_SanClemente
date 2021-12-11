@@ -1,4 +1,3 @@
-
 package Datos;
 
 /**
@@ -6,31 +5,33 @@ package Datos;
  * @author Juan Luis Diaz Aylas
  */
 public class vpersona {
-    
+
     private int idpersona;
-    private String nombre1;
-    private String nombre2;
+    private String nombre;
     private String apaterno;
     private String amaterno;
-    private String tipo_documento;
+    private int tipo_documento;
     private String num_doc;
-    private String direccion;
+    private int sexo;
+    private String fecha_nac;
     private String telefono;
+    private String direccion;
     private String email;
 
     public vpersona() {
     }
 
-    public vpersona(int idpersona, String nombre1, String nombre2, String apaterno, String amaterno, String tipo_documento, String num_doc, String direccion, String telefono, String email) {
+    public vpersona(int idpersona, String nombre, String apaterno, String amaterno, int tipo_documento, String num_doc, int sexo, String fecha_nac, String telefono, String direccion, String email) {
         this.idpersona = idpersona;
-        this.nombre1 = nombre1;
-        this.nombre2 = nombre2;
+        this.nombre = nombre;
         this.apaterno = apaterno;
         this.amaterno = amaterno;
         this.tipo_documento = tipo_documento;
         this.num_doc = num_doc;
-        this.direccion = direccion;
+        this.sexo = sexo;
+        this.fecha_nac = fecha_nac;
         this.telefono = telefono;
+        this.direccion = direccion;
         this.email = email;
     }
 
@@ -42,20 +43,12 @@ public class vpersona {
         this.idpersona = idpersona;
     }
 
-    public String getNombre1() {
-        return nombre1;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setNombre1(String nombre1) {
-        this.nombre1 = nombre1;
-    }
-
-    public String getNombre2() {
-        return nombre2;
-    }
-
-    public void setNombre2(String nombre2) {
-        this.nombre2 = nombre2;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
     public String getApaterno() {
@@ -74,11 +67,11 @@ public class vpersona {
         this.amaterno = amaterno;
     }
 
-    public String getTipo_documento() {
+    public int getTipo_documento() {
         return tipo_documento;
     }
 
-    public void setTipo_documento(String tipo_documento) {
+    public void setTipo_documento(int tipo_documento) {
         this.tipo_documento = tipo_documento;
     }
 
@@ -90,12 +83,20 @@ public class vpersona {
         this.num_doc = num_doc;
     }
 
-    public String getDireccion() {
-        return direccion;
+    public int getSexo() {
+        return sexo;
     }
 
-    public void setDireccion(String direccion) {
-        this.direccion = direccion;
+    public void setSexo(int sexo) {
+        this.sexo = sexo;
+    }
+
+    public String getFecha_nac() {
+        return fecha_nac;
+    }
+
+    public void setFecha_nac(String fecha_nac) {
+        this.fecha_nac = fecha_nac;
     }
 
     public String getTelefono() {
@@ -106,6 +107,14 @@ public class vpersona {
         this.telefono = telefono;
     }
 
+    public String getDireccion() {
+        return direccion;
+    }
+
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
+    }
+
     public String getEmail() {
         return email;
     }
@@ -113,7 +122,6 @@ public class vpersona {
     public void setEmail(String email) {
         this.email = email;
     }
-    
     
 
 }

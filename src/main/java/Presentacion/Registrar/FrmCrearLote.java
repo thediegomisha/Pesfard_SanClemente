@@ -21,6 +21,7 @@ public class FrmCrearLote extends javax.swing.JInternalFrame {
         
          cborazonsocial.removeAllItems();
         flote.llenar_combo(cborazonsocial);
+        inhabilitar();
       
     }
 
@@ -46,7 +47,7 @@ public class FrmCrearLote extends javax.swing.JInternalFrame {
         btnCancelar = new javax.swing.JButton();
         lblIdCliente = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        txtApellidomaterno2 = new javax.swing.JTextField();
+        txtnumlote = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
         cborazonsocial = new javax.swing.JComboBox<>();
         jLabel13 = new javax.swing.JLabel();
@@ -129,6 +130,11 @@ public class FrmCrearLote extends javax.swing.JInternalFrame {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnNuevo.setText("Nuevo");
+        btnNuevo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNuevoActionPerformed(evt);
+            }
+        });
         jPanel1.add(btnNuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, -1, -1));
 
         btnGuardar.setText("Guardar");
@@ -150,8 +156,8 @@ public class FrmCrearLote extends javax.swing.JInternalFrame {
         jLabel9.setText("N° DE LOTE");
         jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, -1, -1));
 
-        txtApellidomaterno2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jPanel1.add(txtApellidomaterno2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 160, 70, -1));
+        txtnumlote.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jPanel1.add(txtnumlote, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 160, 70, -1));
 
         jLabel10.setFont(new java.awt.Font("Roboto Black", 0, 14)); // NOI18N
         jLabel10.setText("Razon Social");
@@ -194,9 +200,28 @@ public class FrmCrearLote extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    void inhabilitar(){
+        cborazonsocial.setEnabled(false);
+        txtnumlote.setEnabled(false);
+        btnGuardar.setEnabled(false);
+        btnCancelar.setEnabled(false);
+    }
+    void habilitar(){
+        cborazonsocial.setEnabled(true);
+        txtnumlote.setEnabled(true);
+        btnGuardar.setEnabled(true);
+        btnCancelar.setEnabled(true);
+        btnNuevo.setEnabled(false);
+    }
+    
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
         this.dispose();
     }//GEN-LAST:event_btnCancelarActionPerformed
+
+    private void btnNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevoActionPerformed
+        // TODO add your handling code here:
+        habilitar();
+    }//GEN-LAST:event_btnNuevoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -252,6 +277,6 @@ public class FrmCrearLote extends javax.swing.JInternalFrame {
     private javax.swing.JTable jTable2;
     private javax.swing.JLabel lblIdCliente;
     private javax.swing.JLabel lblIdCliente1;
-    private javax.swing.JTextField txtApellidomaterno2;
+    private javax.swing.JTextField txtnumlote;
     // End of variables declaration//GEN-END:variables
 }

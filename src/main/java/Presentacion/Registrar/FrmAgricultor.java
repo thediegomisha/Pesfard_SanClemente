@@ -5,6 +5,7 @@
 package Presentacion.Registrar;
 
 import Logica.fcliente;
+import Util.ComboBox;
 
 /**
  *
@@ -12,7 +13,8 @@ import Logica.fcliente;
  */
 public class FrmAgricultor extends javax.swing.JInternalFrame {
 
-      fcliente fcliente = new fcliente();
+           
+      ComboBox combobox = new ComboBox();
     /**
      * Creates new form FrmAgricultor
      */
@@ -20,7 +22,7 @@ public class FrmAgricultor extends javax.swing.JInternalFrame {
         initComponents();
         
          cbotipodocumento.removeAllItems();
-        fcliente.llenar_combo(cbotipodocumento);
+        combobox.llenar_combo(cbotipodocumento);
         bgtiposexo.add(rbMasculino);
         bgtiposexo.add(rbFemenino);
     }

@@ -5,8 +5,7 @@
 package Presentacion.Registrar;
 
 import Logica.fcliente;
-
-
+import Util.ComboBox;
 
 /**
  *
@@ -16,22 +15,22 @@ public class FrmCliente extends javax.swing.JInternalFrame {
 
 //    private conexion mysql = new conexion();
 //    private Connection cn = mysql.conectar();
-    fcliente fcliente = new fcliente();
+       
+      ComboBox combobox = new ComboBox();
 
     /**
      * Creates new form FrmCliente
      */
     public FrmCliente() {
         initComponents();
-      //  setLocationRelativeTo(null);
-       
-        
+        //  setLocationRelativeTo(null);
 
-        cbotipodocumento.removeAllItems();        
-        fcliente.llenar_combo(cbotipodocumento);
+        cbotipodocumento.removeAllItems();
+        combobox.llenar_combo(cbotipodocumento);
         cbotipodocumento.setSelectedIndex(-1);
         bgtiposexo.add(rbMasculino);
         bgtiposexo.add(rbFemenino);
+        inhabilitar();
     }
 
     /**
@@ -57,20 +56,18 @@ public class FrmCliente extends javax.swing.JInternalFrame {
         rbFemenino = new javax.swing.JRadioButton();
         jLabel7 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        txtdireccion = new javax.swing.JTextArea();
         btnNuevo = new javax.swing.JButton();
         btnGuardar = new javax.swing.JButton();
         btnCancelar = new javax.swing.JButton();
         lblIdCliente = new javax.swing.JLabel();
         txtnombres1 = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
-        txtApellidomaterno2 = new javax.swing.JTextField();
+        txtnumdoc = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
         cbotipodocumento = new javax.swing.JComboBox<>();
         jLabel11 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
-        jDateChooser1 = new com.toedter.calendar.JDateChooser();
-        jLabel5 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
@@ -93,24 +90,39 @@ public class FrmCliente extends javax.swing.JInternalFrame {
 
         jLabel2.setFont(new java.awt.Font("Roboto Black", 0, 14)); // NOI18N
         jLabel2.setText("Segundo Nombre");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, -1, -1));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, -1, -1));
 
         txtnombre2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jPanel1.add(txtnombre2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 110, 210, -1));
+        txtnombre2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtnombre2ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(txtnombre2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 100, 210, -1));
 
         jLabel3.setFont(new java.awt.Font("Roboto Black", 0, 14)); // NOI18N
         jLabel3.setText("Apellido Paterno");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, -1, -1));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, -1, -1));
 
         txtApellidopaterno.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jPanel1.add(txtApellidopaterno, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 150, 210, -1));
+        txtApellidopaterno.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtApellidopaternoActionPerformed(evt);
+            }
+        });
+        jPanel1.add(txtApellidopaterno, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 140, 210, -1));
 
         jLabel4.setFont(new java.awt.Font("Roboto Black", 0, 14)); // NOI18N
         jLabel4.setText("Apellido Materno");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, -1, -1));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, -1, -1));
 
         txtApellidomaterno.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jPanel1.add(txtApellidomaterno, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 180, 210, -1));
+        txtApellidomaterno.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtApellidomaternoActionPerformed(evt);
+            }
+        });
+        jPanel1.add(txtApellidomaterno, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 170, 210, -1));
 
         jLabel6.setFont(new java.awt.Font("Roboto Black", 0, 14)); // NOI18N
         jLabel6.setText("Sexo");
@@ -126,18 +138,28 @@ public class FrmCliente extends javax.swing.JInternalFrame {
 
         jLabel7.setFont(new java.awt.Font("Roboto Black", 0, 14)); // NOI18N
         jLabel7.setText("Direccion");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 370, -1, -1));
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 330, -1, -1));
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(2);
-        jScrollPane1.setViewportView(jTextArea1);
+        txtdireccion.setColumns(20);
+        txtdireccion.setRows(2);
+        jScrollPane1.setViewportView(txtdireccion);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 390, 350, 60));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 360, 350, 90));
 
         btnNuevo.setText("Nuevo");
+        btnNuevo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNuevoActionPerformed(evt);
+            }
+        });
         jPanel1.add(btnNuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 460, -1, -1));
 
         btnGuardar.setText("Guardar");
+        btnGuardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGuardarActionPerformed(evt);
+            }
+        });
         jPanel1.add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 460, -1, -1));
 
         btnCancelar.setText("Cancelar");
@@ -153,14 +175,24 @@ public class FrmCliente extends javax.swing.JInternalFrame {
         jPanel1.add(lblIdCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 40, -1, -1));
 
         txtnombres1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        txtnombres1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtnombres1ActionPerformed(evt);
+            }
+        });
         jPanel1.add(txtnombres1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 70, 210, -1));
 
         jLabel9.setFont(new java.awt.Font("Roboto Black", 0, 14)); // NOI18N
         jLabel9.setText("N° Documento");
         jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, -1, -1));
 
-        txtApellidomaterno2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jPanel1.add(txtApellidomaterno2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 260, 140, -1));
+        txtnumdoc.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        txtnumdoc.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtnumdocActionPerformed(evt);
+            }
+        });
+        jPanel1.add(txtnumdoc, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 260, 140, -1));
 
         jLabel10.setFont(new java.awt.Font("Roboto Black", 0, 14)); // NOI18N
         jLabel10.setText("Tipo de Documento");
@@ -176,13 +208,6 @@ public class FrmCliente extends javax.swing.JInternalFrame {
         jLabel13.setFont(new java.awt.Font("Roboto Black", 0, 14)); // NOI18N
         jLabel13.setText("IdCliente");
         jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, -1, -1));
-
-        jDateChooser1.setFont(new java.awt.Font("Roboto Black", 1, 14)); // NOI18N
-        jPanel1.add(jDateChooser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 330, 160, 30));
-
-        jLabel5.setFont(new java.awt.Font("Roboto Black", 0, 14)); // NOI18N
-        jLabel5.setText("Fecha de Nacimiento");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 330, -1, -1));
 
         jPanel2.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 380, 500));
 
@@ -269,9 +294,90 @@ public class FrmCliente extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    void inhabilitar() {
+        txtnombres1.setEnabled(false);
+        txtnombre2.setEnabled(false);
+        txtApellidopaterno.setEnabled(false);
+        txtApellidomaterno.setEnabled(false);
+        cbotipodocumento.setEnabled(false);
+        txtnumdoc.setEnabled(false);
+        rbMasculino.setEnabled(false);
+        rbFemenino.setEnabled(false);
+        txtdireccion.setEnabled(false);
+        btnGuardar.setEnabled(false);
+        btnCancelar.setEnabled(false);
+        btnNuevo.setEnabled(true);
+
+    }
+
+    void habilitar() {
+        txtnombres1.setEnabled(true);
+        txtnombre2.setEnabled(true);
+        txtApellidopaterno.setEnabled(true);
+        txtApellidomaterno.setEnabled(true);
+        cbotipodocumento.setEnabled(true);
+        txtnumdoc.setEnabled(true);
+        rbMasculino.setEnabled(true);
+        rbFemenino.setEnabled(true);
+        txtdireccion.setEnabled(true);
+        btnGuardar.setEnabled(true);
+        btnCancelar.setEnabled(true);
+        btnNuevo.setEnabled(false);
+
+    }
+
+    void limpiartxt() {
+        txtnombres1.setText("");
+        txtnombre2.setText("");
+        txtApellidopaterno.setText("");
+        txtApellidomaterno.setText("");
+        cbotipodocumento.setSelectedIndex(-1);
+        rbMasculino.setSelected(false);
+        rbFemenino.setSelected(false);
+        txtnumdoc.setText("");
+        txtdireccion.setText("");
+    }
+
+
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
         this.dispose();
     }//GEN-LAST:event_btnCancelarActionPerformed
+
+    private void btnNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevoActionPerformed
+        // TODO add your handling code here:
+        habilitar();
+    }//GEN-LAST:event_btnNuevoActionPerformed
+
+    private void txtnombres1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtnombres1ActionPerformed
+        // TODO add your handling code here:
+        txtnombres1.transferFocus();
+    }//GEN-LAST:event_txtnombres1ActionPerformed
+
+    private void txtnombre2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtnombre2ActionPerformed
+        // TODO add your handling code here:
+        txtnombre2.transferFocus();
+    }//GEN-LAST:event_txtnombre2ActionPerformed
+
+    private void txtApellidopaternoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtApellidopaternoActionPerformed
+        // TODO add your handling code here:
+        txtApellidopaterno.transferFocus();
+    }//GEN-LAST:event_txtApellidopaternoActionPerformed
+
+    private void txtApellidomaternoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtApellidomaternoActionPerformed
+        // TODO add your handling code here:
+        txtApellidomaterno.transferFocus();
+    }//GEN-LAST:event_txtApellidomaternoActionPerformed
+
+    private void txtnumdocActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtnumdocActionPerformed
+        // TODO add your handling code here:
+        txtnumdoc.transferFocus();
+    }//GEN-LAST:event_txtnumdocActionPerformed
+
+    private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
+        // TODO add your handling code here:
+        limpiartxt();
+        inhabilitar();
+    }//GEN-LAST:event_btnGuardarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -318,7 +424,6 @@ public class FrmCliente extends javax.swing.JInternalFrame {
     private javax.swing.JButton btnGuardar;
     private javax.swing.JButton btnNuevo;
     private javax.swing.JComboBox<String> cbotipodocumento;
-    private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
@@ -327,7 +432,6 @@ public class FrmCliente extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel9;
@@ -339,14 +443,14 @@ public class FrmCliente extends javax.swing.JInternalFrame {
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
-    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JLabel lblIdCliente;
     private javax.swing.JRadioButton rbFemenino;
     private javax.swing.JRadioButton rbMasculino;
     private javax.swing.JTextField txtApellidomaterno;
-    private javax.swing.JTextField txtApellidomaterno2;
     private javax.swing.JTextField txtApellidopaterno;
+    private javax.swing.JTextArea txtdireccion;
     private javax.swing.JTextField txtnombre2;
     private javax.swing.JTextField txtnombres1;
+    private javax.swing.JTextField txtnumdoc;
     // End of variables declaration//GEN-END:variables
 }
